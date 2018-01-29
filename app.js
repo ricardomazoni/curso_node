@@ -1,24 +1,14 @@
-var express = require('express');
-var app = express();
+//var msg = require("./mod_teste");
+var app = require('./config/server');
 
-app.set('view engine','ejs');
-
-app.get('/tecnologia',function(req,res){
-	res.render("secao/tecnologia");
-});
-
-app.get('/',function(req,res){
-	res.send("<html><body>Porta de Noticias</body></html>");
-
-
-});
+var rotaNoticias = require('./app/routes/noticias');
+rotaNoticias(app);
 
 app.listen(3000, function(){
 
-	console.log("Servidor rodando com Express");
+	console.log('Servidor On');
 
 });
-
 
 
 
